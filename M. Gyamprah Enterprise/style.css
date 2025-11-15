@@ -928,4 +928,9 @@ button {
     white-space: normal; /* THIS is the fix */
   }
 
+  .hero-card {
+    padding-bottom: 0.1rem;
+    margin-bottom: -3rem;
+  }
+
 }
