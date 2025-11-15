@@ -894,29 +894,5 @@ button {
   .mobile-only {
     display: inline-flex;
   }
-
-  .hero-stats .label {
-    font-size: 0.9rem;
-    opacity: 0.75;
-  }
   
-}
-
-@media (max-width: 900px) {
-  .hero-grid,
-  .about-grid,
-  .contact-grid,
-  .footer-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  /* Add this bit */
-  .grid-3 {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.2rem;
-  }
-
-  .info-card {
-    padding: 1.1rem 1rem;
-  }
 }
