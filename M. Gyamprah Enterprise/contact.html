@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact MGE | M. Gyamprah Enterprise</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <section class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">MGE</span>
+        <span class="logo-sub">M. Gyamprah Enterprise</span>
+      </a>
+
+      <nav id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="header-actions">
+        <button id="cart-toggle" class="icon-button" aria-label="Open cart">
+          🛒 <span id="cart-count" class="cart-count">0</span>
+        </button>
+        <button id="menu-toggle" class="icon-button mobile-only" aria-label="Toggle menu">
+          ☰
+        </button>
+      </section>
+    </section>
+  </header>
+
+  <!-- CART PANEL -->
+  <aside id="cart-panel" class="cart-panel">
+    <section class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close" class="icon-button" aria-label="Close cart">✕</button>
+    </section>
+    <section id="cart-items" class="cart-items">
+      <p class="cart-empty">Your cart is empty.</p>
+    </section>
+    <section class="cart-footer">
+      <section class="cart-total-row">
+        <span>Total:</span>
+        <span id="cart-total">GHS 0.00</span>
+      </section>
+      <button class="primary-btn cart-checkout-btn">Checkout (Coming Soon)</button>
+    </section>
+  </aside>
+
+  <section id="overlay" class="overlay"></section>
+
+  <main class="section-padding">
+    <section class="container contact-grid">
+      <section class="contact-text reveal">
+        <h1>Get in Touch with MGE</h1>
+        <p>
+          Reach out for pricing, bulk orders, delivery options, fuel station location or partnership opportunities.
+        </p>
+        <ul class="contact-details">
+          <li><strong>Location:</strong> Ghana</li>
+          <li><strong>Email:</strong> info@mge-enterprise.com (placeholder)</li>
+          <li><strong>Phone:</strong> +233 000 000 000 (placeholder)</li>
+        </ul>
+        <p class="contact-note">
+          Fill in the form and we’ll get back to you as soon as possible.
+        </p>
+      </section>
+
+      <section class="contact-form-card reveal">
+        <form class="contact-form" id="contact-form">
+          <section class="form-row">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </section>
+
+          <section class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </section>
+
+          <section class="form-row">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </section>
+
+          <section class="form-row">
+            <label for="topic">What are you interested in?</label>
+            <select id="topic" name="topic">
+              <option value="materials">Building materials</option>
+              <option value="steel">Steel coils / imports</option>
+              <option value="fuel">Filling / gas station</option>
+              <option value="partnership">Partnership / supplier</option>
+              <option value="other">Other</option>
+            </select>
+          </section>
+
+          <section class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </section>
+
+          <button type="submit" class="primary-btn full-width">Send Message</button>
+          <p id="contact-feedback" class="form-feedback"></p>
+        </form>
+      </section>
+    </section>
+
+    <section class="section-padding section-muted reveal">
+      <section class="container">
+        <header class="section-header">
+          <h2>Visit Our Station</h2>
+          <p>Exact map and address can be added here later.</p>
+        </header>
+        <section class="map-placeholder">
+          <p>Map / Location placeholder – embed Google Maps or add address here.</p>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <section class="container footer-grid">
+      <section>
+        <h3>MGE – M. Gyamprah Enterprise</h3>
+        <p>Reach out for materials, steel imports or fuel supply information.</p>
+      </section>
+      <section>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About us</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4>Contact</h4>
+        <p>Email: info@mge-enterprise.com (placeholder)</p>
+        <p>Phone: +233 000 000 000 (placeholder)</p>
+      </section>
+    </section>
+    <section class="footer-bottom">
+      <p>© <span id="year"></span> M. Gyamprah Enterprise. All rights reserved.</p>
+    </section>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

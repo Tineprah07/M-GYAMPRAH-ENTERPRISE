@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MGE | M. Gyamprah Enterprise – Building Materials & Fuel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <section class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">MGE</span>
+        <span class="logo-sub">M. Gyamprah Enterprise</span>
+      </a>
+
+      <nav id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="header-actions">
+        <button id="cart-toggle" class="icon-button" aria-label="Open cart">
+        🛒 <span>Cart</span> <span id="cart-count" class="cart-count">0</span>        </button>
+        <button id="menu-toggle" class="icon-button mobile-only" aria-label="Toggle menu">
+          ☰
+        </button>
+      </section>
+    </section>
+  </header>
+
+  <!-- CART PANEL -->
+  <aside id="cart-panel" class="cart-panel">
+    <section class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close" class="icon-button" aria-label="Close cart">✕</button>
+    </section>
+    <section id="cart-items" class="cart-items">
+      <p class="cart-empty">Your cart is empty.</p>
+    </section>
+    <section class="cart-footer">
+      <section class="cart-total-row">
+        <span>Total:</span>
+        <span id="cart-total">GHS 0.00</span>
+      </section>
+      <button class="primary-btn cart-checkout-btn">Checkout (Coming Soon)</button>
+    </section>
+  </aside>
+
+  <!-- OVERLAY -->
+  <section id="overlay" class="overlay"></section>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero-section reveal">
+      <section class="container hero-grid">
+        <section class="hero-text">
+            <p class="hero-kicker">Building materials · Steel coils · Fuel station</p>
+            <h1>
+                Quality Building Materials & Fuel<br />
+                <span class="highlight">Trusted by Builders Across Ghana</span>
+            </h1>
+            <p>
+                M. Gyamprah Enterprise (MGE) supplies high-quality building materials, 
+                imports galvanized and pre-painted steel coils from China, and operates
+                a modern filling station — all from Ghana.
+            </p>
+            <section class="hero-actions">
+                <a href="products.html" class="primary-btn">Shop Building Materials</a>
+                <a href="contact.html" class="ghost-btn">Request a Bulk Quote</a>
+            </section>
+          
+        </section>
+
+        <section class="hero-card reveal">
+          <section class="hero-card-inner">
+            <h2>MGE Supply Snapshot</h2>
+            <ul class="hero-stats">
+              <li>
+                <span class="label">Steel Coils</span>
+                <span class="value">Pre-painted & Galvanized</span>
+              </li>
+              <li>
+                <span class="label">Building Materials</span>
+                <span class="value">Cement, iron rods, roofing & more</span>
+              </li>
+              <li>
+                <span class="label">Fuel Station</span>
+                <span class="value">Petrol, diesel & LPG</span>
+              </li>
+            </ul>
+            <p class="hero-note">
+              Looking for bulk orders or long-term supply? Let’s talk.
+            </p>
+            <a href="contact.html" class="primary-btn full-width">Talk to Sales</a>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section-padding reveal">
+      <section class="container">
+        <header class="section-header">
+          <h2>What MGE Offers</h2>
+          <p>From steel imports to everyday building materials and fuel, we keep your projects moving.</p>
+        </header>
+
+        <section class="grid-3">
+          <article class="info-card">
+            <h3>Building Materials Supply</h3>
+            <p>
+              Cement, iron rods, roofing sheets, pipes, tiles and more — carefully sourced
+              for durability and value for money.
+            </p>
+            <a href="products.html" class="text-link">Explore building materials →</a>
+          </article>
+
+          <article class="info-card">
+            <h3>Steel Coil Imports</h3>
+            <p>
+              Ghana-based buyer importing galvanized and pre-painted steel coils from China
+              for roofing, fabrication and industrial use.
+            </p>
+            <a href="about.html" class="text-link">Learn about our imports →</a>
+          </article>
+
+          <article class="info-card">
+            <h3>Filling Station</h3>
+            <p>
+              Reliable petrol and diesel service with friendly staff and fair pricing.            </p>
+            <a href="contact.html" class="text-link">Get location & directions →</a>
+          </article>
+        </section>
+      </section>
+    </section>
+
+    <!-- FEATURED CATEGORIES -->
+    <section class="section-padding section-muted reveal">
+      <section class="container">
+        <header class="section-header">
+          <h2>Popular Categories</h2>
+          <p>Browse some of the most requested items from contractors and homeowners.</p>
+        </header>
+
+        <section class="categories-grid">
+          <article class="category-card">
+            <h3>Cement & Blocks</h3>
+            <p>Quality cement brands and blocks suitable for foundations and full builds.</p>
+          </article>
+          <article class="category-card">
+            <h3>Steel & Iron Rods</h3>
+            <p>Standard and high-tensile rods for reinforced concrete and structural work.</p>
+          </article>
+          <article class="category-card">
+            <h3>Roofing Sheets & Coils</h3>
+            <p>Pre-painted and galvanized sheets and coils for long-lasting roofs.</p>
+          </article>
+          <article class="category-card">
+            <h3>Plumbing & Electrical</h3>
+            <p>Pipes, fittings, cables and accessories for complete installations.</p>
+          </article>
+        </section>
+
+        <section class="centered-cta">
+          <a href="products.html" class="primary-btn">View All Products</a>
+        </section>
+      </section>
+    </section>
+
+    <!-- IMPORT & LOCATION STRIP -->
+    <section class="import-strip reveal">
+      <section class="container import-strip-inner">
+        <section>
+          <h2>Ghana Buyer · China Suppliers</h2>
+          <p>
+            M. Gyamprah Enterprise is a Ghana-based buyer with a growing supplier network in China,
+            importing steel coils and other materials for the local market.
+          </p>
+        </section>
+        <section class="import-badges">
+          <span class="badge">Ghana</span>
+          <span class="badge">China</span>
+          <span class="badge">Steel Coils</span>
+        </section>
+      </section>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding reveal">
+      <section class="container cta-banner">
+        <section>
+          <h2>Planning a New Project or Station Refit?</h2>
+          <p>
+            Whether you’re building from scratch or upgrading, MGE can support you with building materials,
+            steel coils and fuel supply guidance.
+          </p>
+        </section>
+        <section class="cta-actions">
+          <a href="contact.html" class="primary-btn">Request a Quote</a>
+          <a href="about.html" class="ghost-btn">Learn more about MGE</a>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <section class="container footer-grid">
+      <section>
+        <h3>MGE – M. Gyamprah Enterprise</h3>
+        <p>
+          Building materials, steel coil imports, and a modern filling station — serving Ghana’s
+          builders, businesses and households.
+        </p>
+      </section>
+      <section>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact & location</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4>Contact</h4>
+        <p>Location: Ghana</p>
+        <p>Email: info@mge-enterprise.com (placeholder)</p>
+        <p>Phone: +233 000 000 000 (placeholder)</p>
+      </section>
+    </section>
+    <section class="footer-bottom">
+      <p>© <span id="year"></span> M. Gyamprah Enterprise. All rights reserved.</p>
+    </section>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
