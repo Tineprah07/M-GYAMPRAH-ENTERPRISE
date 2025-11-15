@@ -530,6 +530,52 @@ button {
   font-size: 0.9rem;
 }
 
+/* PRODUCT CARD BUTTON FIX */
+.product-card .primary-btn,
+.product-card .ghost-btn {
+  width: fit-content;           /* shrink to text size */
+  padding: 0.45rem 1rem;        /* smaller height + balanced width */
+  font-size: 0.85rem;           /* smaller text */
+  margin-inline: auto;          /* centre horizontally */
+  display: block;               /* ensure centring works */
+  border-radius: 2rem;          
+}
+
+/* --- PRICE + BUTTON ON SAME LINE --- */
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+/* Small modern button */
+.add-btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Adjust font size */
+.product-price {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+  .product-bottom {
+    gap: 1rem;
+  }
+
+  .add-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.75rem;
+  }
+}
+
+
 .section-note {
   margin-top: 2rem;
   font-size: 0.85rem;
