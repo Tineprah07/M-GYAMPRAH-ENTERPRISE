@@ -73,6 +73,52 @@ The server also serves the static `client/` folder, so once it's running you can
 
 You can also open the `client/` files directly in a static server (e.g. VS Code Live Server on port 5500). `client/js/config.js` will auto-detect and point at `http://localhost:4000` for the API.
 
+## Deploy to Render
+
+This repo ships with a `render.yaml` Blueprint that provisions everything in one step: a managed PostgreSQL database and a Node web service running the Express app (which also serves the static client).
+
+### One-time setup (≈ 5 minutes)
+
+1. **Push the repo to GitHub** (already done if you cloned `Tineprah07/M-GYAMPRAH-ENTERPRISE`).
+2. In the [Render dashboard](https://dashboard.render.com): click **New +** → **Blueprint**.
+3. Connect your GitHub account, pick the `M-GYAMPRAH-ENTERPRISE` repo, and approve the Blueprint.
+4. Render reads `render.yaml` and creates:
+   - **`mge-db`** — free PostgreSQL 16 instance.
+   - **`mge-api`** — free Node web service. Build runs `npm install && npm run db:init`. Start runs `npm start`.
+5. Wait for the build to go green. The web service URL will look like `https://mge-api.onrender.com`.
+6. **Seed the product catalogue (once)**: open the web service in Render → **Shell** tab → run:
+   ```bash
+   npm run db:seed
+   ```
+7. **(Optional)** In the web service's **Environment** tab, set `CORS_ORIGIN` to your Render URL (e.g. `https://mge-api.onrender.com`) and click **Save Changes**. The service will redeploy.
+
+That's it. Visiting your Render URL should serve the full site, with the API and Postgres wired in.
+
+### After every code change
+
+Just `git push` to `main`. Render auto-deploys (the Blueprint sets `autoDeploy: true`).
+
+### Free tier gotchas
+
+- The web service **spins down after 15 min of inactivity**. First request after that takes ~30s to cold-start.
+- The free PostgreSQL instance is **automatically deleted after 90 days** — back up or upgrade before then.
+- Static assets (images, fonts) are still served from the same web service, so spin-down affects them too. For production, upgrade to the paid tier or move assets to a CDN.
+
+### Manual setup (if you don't want to use the Blueprint)
+
+If you prefer to wire it up by hand:
+1. **New +** → **PostgreSQL**. Note the `Internal Database URL`.
+2. **New +** → **Web Service** → connect repo. Settings:
+   - Root Directory: `server`
+   - Runtime: Node
+   - Build Command: `npm install && npm run db:init`
+   - Start Command: `npm start`
+   - Health Check Path: `/api/health`
+3. Environment variables:
+   - `NODE_ENV` = `production`
+   - `DATABASE_URL` = (paste the Internal Database URL from step 1)
+4. Deploy. Then `npm run db:seed` once via the Shell tab.
+
 ## API summary
 
 | Method | Endpoint                  | Purpose                                    |
