@@ -1,0 +1,25 @@
+-- M. Gyamprah Enterprise · sample catalog
+-- Prices are in GHS (Ghanaian Cedi). Adjust freely.
+
+TRUNCATE products RESTART IDENTITY CASCADE;
+
+INSERT INTO products (name, slug, category, price, unit, description, image_url, is_featured, in_stock) VALUES
+  ('Ordinary Portland Cement · 50kg',         'cement-opc-50kg',          'building-materials', 95.00,  'bag',   'Premium-grade OPC 42.5 for general construction, foundations and concrete works.', 'https://images.unsplash.com/photo-1597844808175-cb965b8d4d12?w=800', TRUE,  TRUE),
+  ('High-Tensile Iron Rod · 12mm',            'iron-rod-12mm',            'building-materials', 78.00,  'length','Y12 deformed reinforcement bar, BS 4449 compliant. Standard 12m length.',           'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800', TRUE,  TRUE),
+  ('High-Tensile Iron Rod · 16mm',            'iron-rod-16mm',            'building-materials', 140.00, 'length','Y16 deformed reinforcement bar for columns and beams. Standard 12m length.',         'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=800', FALSE, TRUE),
+  ('Aluzinc Roofing Sheet · 0.40mm',          'roofing-aluzinc-0-40',     'building-materials', 65.00,  'm²',    'Long-span Aluzinc roofing sheet, anti-corrosion coating, custom-cut to length.',     'https://images.unsplash.com/photo-1632935190508-bb91f4ab73aa?w=800', TRUE,  TRUE),
+  ('Concrete Block · 6 inch Solid',           'block-6in-solid',          'building-materials', 6.50,   'unit',  'Vibrated solid concrete block for load-bearing walls.',                              'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=800', FALSE, TRUE),
+  ('PVC Pipe · 4 inch (110mm)',               'pvc-pipe-4in',             'building-materials', 95.00,  'length','Pressure-rated PVC pipe for drainage and plumbing. 6m length.',                      'https://images.unsplash.com/photo-1581092916357-3d6d6ae0e6cb?w=800', FALSE, TRUE),
+  ('Floor Tile · 60x60 Polished',             'tile-60x60-polished',      'building-materials', 145.00, 'box',   'Premium glazed porcelain floor tile, 60x60cm, 4 pieces per box.',                    'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800', FALSE, TRUE),
+  ('Electrical Cable · 2.5mm² Twin & Earth',  'cable-2-5mm',              'building-materials', 580.00, 'roll',  'Copper twin-and-earth cable for domestic wiring. 100m roll.',                        'https://images.unsplash.com/photo-1558389186-438424b00a2d?w=800', FALSE, TRUE),
+
+  ('Galvanized Steel Coil · 0.45mm',          'gi-coil-0-45',             'steel-imports',      8800.00,'tonne', 'Hot-dip galvanized steel coil, Z80 coating. Sourced from China & Turkey mills.',     'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800', TRUE,  TRUE),
+  ('Galvanized Steel Coil · 0.50mm',          'gi-coil-0-50',             'steel-imports',      9200.00,'tonne', 'Hot-dip galvanized steel coil for roofing & fabrication. Mill-test certified.',      'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800', FALSE, TRUE),
+  ('Pre-Painted Steel Coil · PPGI Blue',      'ppgi-coil-blue',           'steel-imports',     10500.00,'tonne', 'Pre-painted galvanized iron coil (PPGI) · RAL 5010 blue. For premium roofing.',     'https://images.unsplash.com/photo-1581094651181-35942459ef62?w=800', TRUE,  TRUE),
+  ('Pre-Painted Steel Coil · PPGI Red',       'ppgi-coil-red',            'steel-imports',     10500.00,'tonne', 'Pre-painted galvanized iron coil (PPGI) · RAL 3011 red oxide finish.',               'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800', FALSE, TRUE),
+  ('Cold-Rolled Steel Sheet',                 'crc-steel-sheet',          'steel-imports',      7800.00,'tonne', 'Cold-rolled steel sheet for industrial fabrication and metalwork.',                  'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800', FALSE, TRUE),
+
+  ('Petrol (Premium PMS)',                    'fuel-petrol',              'fuel',               14.95,  'litre', 'Premium unleaded motor spirit · pump price.',                                        'https://images.unsplash.com/photo-1545262810-77515befe149?w=800', TRUE,  TRUE),
+  ('Diesel (AGO)',                            'fuel-diesel',              'fuel',               15.20,  'litre', 'Automotive gas oil for diesel engines and generators · pump & bulk delivery.',       'https://images.unsplash.com/photo-1606200713379-2ddfdadbd83a?w=800', TRUE,  TRUE),
+  ('LPG Gas Refill',                          'fuel-lpg',                 'fuel',               14.50,  'kg',    'Liquefied petroleum gas refill for domestic and commercial cylinders.',              'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=800', FALSE, TRUE),
+  ('Bulk Diesel Delivery · On-site',          'fuel-diesel-bulk',         'fuel',               15.00,  'litre', 'On-site bulk diesel delivery to construction sites, mines and industrial clients.',  'https://images.unsplash.com/photo-1620735692151-26a7e0748429?w=800', FALSE, TRUE);
