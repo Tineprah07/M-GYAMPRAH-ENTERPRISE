@@ -1,4 +1,6 @@
 const { pool, query } = require('../config/db');
+const mailer = require('../services/mailer');
+const templates = require('../services/emailTemplates');
 
 async function createOrder(req, res, next) {
   const client = await pool.connect();
@@ -49,6 +51,34 @@ async function createOrder(req, res, next) {
     }
 
     await client.query('COMMIT');
+
+    // Fire off both emails in the background — never block the user response.
+    const emailPayload = {
+      order_id: order.id,
+      customer_name,
+      customer_email,
+      customer_phone,
+      customer_company,
+      notes,
+      total: order.total,
+      items: lineItems.map((li) => ({
+        product_name: li.product.name,
+        quantity: li.qty,
+        unit_price: li.product.price,
+        line_total: li.lineTotal,
+      })),
+    };
+    Promise.allSettled([
+      mailer.send({
+        to: process.env.MAIL_ADMIN || process.env.SMTP_USER,
+        replyTo: customer_email,
+        ...templates.adminQuote(emailPayload),
+      }),
+      mailer.send({
+        to: customer_email,
+        ...templates.customerQuoteAck(emailPayload),
+      }),
+    ]).catch((err) => console.error('[orders] background email error:', err));
 
     res.status(201).json({
       data: { order_id: order.id, total: order.total, created_at: order.created_at },

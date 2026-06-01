@@ -1,6 +1,7 @@
 require('dotenv').config();
 const app = require('./app');
 const { pool } = require('./config/db');
+const mailer = require('./services/mailer');
 
 const PORT = Number(process.env.PORT) || 4000;
 
@@ -11,6 +12,12 @@ async function start() {
   } catch (err) {
     console.warn('[db] could not connect at startup:', err.message);
     console.warn('[db] server will still start; check your .env and run npm run db:init');
+  }
+
+  if (mailer.isConfigured()) {
+    mailer.verify().catch(() => {});
+  } else {
+    console.log('[mailer] SMTP not configured — email notifications disabled');
   }
 
   const server = app.listen(PORT, () => {
